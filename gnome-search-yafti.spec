@@ -1,5 +1,5 @@
 Name:           gnome-search-yafti
-Version:        0.0.1
+Version:        0.0.2
 Release:        1%{?dist}
 Summary:        GNOME Shell Search Provider for Bazzite Portal
 
@@ -46,5 +46,8 @@ install -p -m 0644 io.github.ublue_os.yafti.desktop %{buildroot}%{_datadir}/appl
 %{_datadir}/applications/io.github.ublue_os.yafti.desktop
 
 %changelog
+* Fri Jul 10 2026 Alex Shek <hms.starryfish@gmail.com> - 0.0.2-1
+- Fix the dbus ini.
+
 * Fri Jul 10 2026 Alex Shek <hms.starryfish@gmail.com> - 0.0.1-1
 - Initial package for GNOME Shell Search Provider
