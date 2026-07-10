@@ -102,9 +102,6 @@ class YaftiSearchProvider:
         return metas
 
     def ActivateResult(self, identifier, terms, timestamp):
-        # # Remove the krunner prefix if present
-        # if identifier.startswith("krunner-yafti_"):
-        #     identifier = identifier[14:]
 
         script_path = "/usr/bin/yafti_gtk.py" #
         yaml_path = "/usr/share/yafti/yafti.yml"
