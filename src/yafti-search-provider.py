@@ -117,8 +117,17 @@ class YaftiSearchProvider:
         subprocess.Popen([script_path, yaml_path, "--action-id", identifier])
 
     def LaunchSearch(self, terms, timestamp):
-        # Optional: Called if the user clicks the Search Provider header instead of a specific result.
-        pass
+        # Called if the user clicks the Search Provider header instead of a specific result.
+        script_path = "/usr/bin/yafti_gtk.py" #
+        yaml_path = "/usr/share/yafti/yafti.yml"
+        if not os.path.exists(script_path):
+            found = shutil.which("yafti_gtk.py") #
+            if found:
+                script_path = found
+            else:
+                return
+        subprocess.Popen([script_path, yaml_path])
+
 
 if __name__ == '__main__':
     loop = GLib.MainLoop()

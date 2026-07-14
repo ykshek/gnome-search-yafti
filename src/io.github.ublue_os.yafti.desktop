@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Bazzite Portal Actions
-Comment=Search and launch actions from Bazzite Portal
-Icon=io.github.ublue_os.yafti_gtk
-Type=Application
-Exec=/usr/bin/yafti_gtk.py
-Implements=org.gnome.Shell.SearchProvider2
-Categories=Utility;

@@ -1,5 +1,5 @@
 Name:           gnome-search-yafti
-Version:        0.0.2
+Version:        0.0.3
 Release:        1%{?dist}
 Summary:        GNOME Shell Search Provider for Bazzite Portal
 
@@ -37,15 +37,16 @@ install -p -m 0755 yafti-search-provider.py %{buildroot}%{_libexecdir}/yafti-sea
 # Install the D-Bus, GNOME Search Provider, and Desktop files
 install -p -m 0644 io.github.ublue_os.yafti.SearchProvider.service %{buildroot}%{_datadir}/dbus-1/services/
 install -p -m 0644 io.github.ublue_os.yafti.search-provider.ini %{buildroot}%{_datadir}/gnome-shell/search-providers/
-install -p -m 0644 io.github.ublue_os.yafti.desktop %{buildroot}%{_datadir}/applications/
 
 %files
 %{_libexecdir}/yafti-search-provider.py
 %{_datadir}/dbus-1/services/io.github.ublue_os.yafti.SearchProvider.service
 %{_datadir}/gnome-shell/search-providers/io.github.ublue_os.yafti.search-provider.ini
-%{_datadir}/applications/io.github.ublue_os.yafti.desktop
 
 %changelog
+* Tue Jul 14 2026 Alex Shek <hms.starryfish@gmail.com> - 0.0.3-1
+- Reference main yafti_gtk desktop entry instead of providing one.
+
 * Fri Jul 10 2026 Alex Shek <hms.starryfish@gmail.com> - 0.0.2-1
 - Fix the dbus ini.
 
