@@ -44,6 +44,9 @@ install -p -m 0644 io.github.ublue_os.yafti.search-provider.ini %{buildroot}%{_d
 %{_datadir}/gnome-shell/search-providers/io.github.ublue_os.yafti.search-provider.ini
 
 %changelog
+* Tue Jul 14 2026 Alex Shek <hms.starryfish@gmail.com> - 1.0.0-1
+- Bump version to release as 1.0.0
+
 * Tue Jul 14 2026 Alex Shek <hms.starryfish@gmail.com> - 0.0.3-1
 - Reference main yafti_gtk desktop entry instead of providing one.
 
