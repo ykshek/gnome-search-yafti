@@ -18,7 +18,7 @@ rpm: build-container
 
     # Create source tarball
     echo "Creating source tarball..."
-    tar -czf rpmbuild/SOURCES/gnome-search-yafti-$VERSION.tar.gz -C src .
+    git archive --format=tar.gz --prefix=gnome-search-yafti-${VERSION}/ HEAD:src > rpmbuild/SOURCES/gnome-search-yafti-${VERSION}.tar.gz
 
     # Copy spec file
     cp gnome-search-yafti.spec rpmbuild/SPECS/

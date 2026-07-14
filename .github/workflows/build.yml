@@ -33,30 +33,14 @@ jobs:
       run: |
         docker build -t localhost/gnome-search-yafti:dev -f Containerfile .
 
-    - name: Build project
-      run: |
-        mkdir -p build
-        docker run --rm \
-          --volume "$(pwd):/workspace" \
-          --workdir /workspace \
-          localhost/gnome-search-yafti:dev \
-          bash -c '
-            set -euo pipefail
-            cd build
-            cmake .. \
-              -DCMAKE_BUILD_TYPE=Release \
-              -DCMAKE_INSTALL_PREFIX=/usr
-            make -j$(nproc)
-          '
-
     - name: Test RPM build
       run: |
         # Create RPM build structure
         mkdir -p rpmbuild/{SOURCES,SPECS,BUILD,RPMS,SRPMS}
 
-        # Create source tarball with valid RPM version (no hyphens)
+        # Create source tarball
         VERSION=$(grep '^Version:' gnome-search-yafti.spec | awk '{print $2}')
-        git archive --format=tar.gz --prefix=v${VERSION}/ HEAD > rpmbuild/SOURCES/v${VERSION}.tar.gz
+        git archive --format=tar.gz --prefix=gnome-search-yafti-${VERSION}/ HEAD:src/ > rpmbuild/SOURCES/gnome-search-yafti-${VERSION}.tar.gz
 
         # Copy spec file
         cp gnome-search-yafti.spec rpmbuild/SPECS/

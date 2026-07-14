@@ -1,5 +1,5 @@
 Name:           gnome-search-yafti
-Version:        0.0.3
+Version:        1.0.0
 Release:        1%{?dist}
 Summary:        GNOME Shell Search Provider for Bazzite Portal
 
@@ -20,7 +20,7 @@ A GNOME Shell Search Provider that integrates Yafti (Bazzite Portal) actions
 directly into the GNOME Shell overview.
 
 %prep
-%setup -q -c
+%autosetup
 
 %build
 
@@ -29,12 +29,11 @@ directly into the GNOME Shell overview.
 install -d -m 0755 %{buildroot}%{_libexecdir}
 install -d -m 0755 %{buildroot}%{_datadir}/dbus-1/services
 install -d -m 0755 %{buildroot}%{_datadir}/gnome-shell/search-providers
-install -d -m 0755 %{buildroot}%{_datadir}/applications
 
 # Install the Python executable
 install -p -m 0755 yafti-search-provider.py %{buildroot}%{_libexecdir}/yafti-search-provider.py
 
-# Install the D-Bus, GNOME Search Provider, and Desktop files
+# Install the D-Bus and GNOME Search Provider
 install -p -m 0644 io.github.ublue_os.yafti.SearchProvider.service %{buildroot}%{_datadir}/dbus-1/services/
 install -p -m 0644 io.github.ublue_os.yafti.search-provider.ini %{buildroot}%{_datadir}/gnome-shell/search-providers/
 
