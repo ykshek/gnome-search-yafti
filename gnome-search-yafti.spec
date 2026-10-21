@@ -14,9 +14,10 @@ Requires:       python3
 Requires:       python3-gobject
 Requires:       python3-pydbus
 Requires:       python3-pyyaml
+Requires:       bazzite-portal
 
 %description
-A GNOME Shell Search Provider that integrates Yafti (Bazzite Portal) actions
+A GNOME Shell Search Provider that integrates Bazzite Portal actions
 directly into the GNOME Shell overview.
 
 %prep

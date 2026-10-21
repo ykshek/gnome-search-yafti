@@ -41,7 +41,7 @@ class YaftiSearchProvider:
         self.load_actions()
 
     def load_actions(self):
-        yaml_path = "/usr/share/yafti/yafti.yml" #
+        yaml_path = "/usr/share/bazzite-portal/tools.yml" #
         try:
             with open(yaml_path, 'r') as f:
                 config = yaml.safe_load(f)
@@ -103,11 +103,11 @@ class YaftiSearchProvider:
 
     def ActivateResult(self, identifier, terms, timestamp):
 
-        script_path = "/usr/bin/yafti_gtk.py" #
-        yaml_path = "/usr/share/yafti/yafti.yml"
+        script_path = "/usr/bin/bazzite-portal" #
+        yaml_path = "/usr/share/bazzite-portal/tools.yml"
 
         if not os.path.exists(script_path):
-            found = shutil.which("yafti_gtk.py") #
+            found = shutil.which("bazzite-portal") #
             if found:
                 script_path = found
             else:
@@ -118,10 +118,10 @@ class YaftiSearchProvider:
 
     def LaunchSearch(self, terms, timestamp):
         # Called if the user clicks the Search Provider header instead of a specific result.
-        script_path = "/usr/bin/yafti_gtk.py" #
-        yaml_path = "/usr/share/yafti/yafti.yml"
+        script_path = "/usr/bin/bazzite-portal" #
+        yaml_path = "/usr/share/bazzite-portal/tools.yml"
         if not os.path.exists(script_path):
-            found = shutil.which("yafti_gtk.py") #
+            found = shutil.which("bazzite-portal") #
             if found:
                 script_path = found
             else:
